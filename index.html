@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Move Event</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+        }
+        .tracker {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 20px;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tracker">Mouse Position: (0, 0)</div>
+
+    <script>
+        // Access the element where we want to display the mouse coordinates
+        const tracker = document.querySelector('.tracker');
+
+        // Add the mousemove event listener to the document
+        document.addEventListener('mousemove', function(event) {
+            // Get mouse coordinates relative to the viewport
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            // Update the tracker element with the new mouse position
+            tracker.textContent = `Mouse Position: (${mouseX}, ${mouseY})`;
+        });
+    </script>
+</body>
+</html>
